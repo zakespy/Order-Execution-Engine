@@ -56,3 +56,5 @@ Desktop.ini
 *.local
 *.pid
 *.seed
+
+/src/generated/prisma
