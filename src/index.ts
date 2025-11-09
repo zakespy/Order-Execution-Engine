@@ -8,6 +8,14 @@ const fastify = Fastify();
 fastify.register(websocket);
 fastify.register(orderRoutes);
 
-fastify.listen({ port: 3000 }, () => {
-  console.log(" Server running at http://localhost:3000");
+// const port = Number(process.env.PORT) || 3000;
+const port = Number(process.env.PORT)
+const host = "0.0.0.0"; // Required for Cloud Run networking
+
+fastify.listen({ port, host }, (err, address) => {
+  if (err) {
+    console.error("Server failed to start:", err);
+    process.exit(1);
+  }
+  console.log(`Server running at ${address}`);
 });
