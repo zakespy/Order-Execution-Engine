@@ -1,5 +1,5 @@
 // src/services/order.service.ts
-import { MockDexRouter } from "./dexRouter.services";
+import { MockDexRouter } from "./dexRouter.services.js";
 
 const dexRouter = new MockDexRouter();
 
@@ -35,6 +35,11 @@ export async function processOrder(order: any, ws: any) {
     );
 
   } catch (err) {
-    ws.send(JSON.stringify({ status: "failed", error: err.message }));
+    if (err instanceof Error) {
+      ws.send(JSON.stringify({ status: "failed", error: err.message }));
+    } else {
+      ws.send(JSON.stringify({ status: "failed", error: err }));
+    }
+    
   }
 }

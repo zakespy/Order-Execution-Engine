@@ -1,1 +1,58 @@
+# === Node & Package Manager ===
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+.pnpm-store/
+
+# === TypeScript Build Output ===
+dist/
+build/
+*.tsbuildinfo
+
+# === Environment & Config ===
+.env
+.env.*
+!.env.example    # Keep template env files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# === Logs & Temp Files ===
+logs/
+*.log
+*.tmp
+temp/
+.cache/
+coverage/
+
+# === Database & Runtime Data ===
+*.db
+*.sqlite
+dump.rdb
+redis_data/
+pgdata/
+data/
+
+# === Prisma ===
+prisma/generated/
+prisma/migrations/.DS_Store
+
+# === Docker & Dev Containers ===
+docker-compose.override.yml
+.docker/
+docker-data/
+**/.dockerignore
+
+# === OS Specific ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Misc ===
+*.local
+*.pid
+*.seed

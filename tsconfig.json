@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* === Output Structure === */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* === Module / Target === */
+    "module": "nodenext",                // ESM + Node-compatible
+    "moduleResolution": "nodenext",      // Important: matches module
+    "target": "es2022",                  // modern Node target
+
+    /* === Interop / Module Syntax === */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "verbatimModuleSyntax": false,       // ✅ FIXES your error
+    "isolatedModules": true,
+
+    /* === Type & Library Settings === */
+    "lib": ["esnext","dom"],
+    "types": ["node"],                   // required for Fastify, BullMQ, Redis
+    "skipLibCheck": true,
+
+    /* === Type Checking & Style === */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* === Source Maps & Declarations === */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": ["src/**/*.ts"]
+}

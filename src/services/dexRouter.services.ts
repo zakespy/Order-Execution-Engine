@@ -1,4 +1,4 @@
-import {sleep , generateMockTxHash } from "../utils/helpers";
+import {sleep , generateMockTxHash } from "../utils/helpers.js";
 
 const basePrice = 100
 
