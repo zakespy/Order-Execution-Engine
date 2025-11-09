@@ -18,4 +18,5 @@ model Order {
   executed_price Float?
   created_at     DateTime @default(now())
   updated_at     DateTime @updatedAt
+  error          String?
 }

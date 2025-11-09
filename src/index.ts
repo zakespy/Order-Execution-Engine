@@ -1,10 +1,11 @@
 import Fastify from "fastify";
-import websocketPlugin from "@fastify/websocket"; 
+import websocket from "@fastify/websocket"; 
+import { orderWorker } from "./queue/worker.js";
 import orderRoutes from "./api/orders.controller.js";
-// import { orderWorker } from "./queue/worker";
+import { orderQueue } from "./queue/order.queue.js";
 
 const fastify = Fastify();
-fastify.register(websocketPlugin);
+fastify.register(websocket);
 fastify.register(orderRoutes);
 
 fastify.listen({ port: 3000 }, () => {
